@@ -80,6 +80,22 @@ impl InputStream {
                 }) => {
                     value_tag = value_t;
                 }
+                // Some(Value {
+                //     value: UntaggedValue::Primitive(Primitive::Int(i)),
+                //     tag: value_t,
+                // }) => {
+                //     value_tag = value_t;
+                //     let s = format!("{}", i);
+                //     bytes.extend_from_slice(&s.into_bytes());
+                // }
+                // Some(Value {
+                //     value: UntaggedValue::Primitive(Primitive::Decimal(d)),
+                //     tag: value_t,
+                // }) => {
+                //     value_tag = value_t;
+                //     let s = format!("{}", d);
+                //     bytes.extend_from_slice(&s.into_bytes());
+                // }
                 Some(Value {
                     tag: value_tag,
                     value,
@@ -93,7 +109,7 @@ impl InputStream {
                             Type::from_value(&value).plain_string(100000)
                         ),
                         value_tag,
-                    ))
+                    ));
                 }
                 None => break,
             }

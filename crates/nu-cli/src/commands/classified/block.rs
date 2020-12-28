@@ -118,7 +118,7 @@ pub async fn run_block(
 }
 
 #[async_recursion]
-async fn run_pipeline(
+pub async fn run_pipeline(
     commands: &Pipeline,
     ctx: &EvaluationContext,
     mut input: InputStream,

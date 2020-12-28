@@ -142,6 +142,8 @@ impl Primitive {
     pub fn into_string(self, span: Span) -> Result<String, ShellError> {
         match self {
             Primitive::String(s) => Ok(s),
+            // Primitive::Decimal(d) => Ok(format!("{}", d)),
+            // Primitive::Int(i) => Ok(format!("{}", i)),
             other => Err(ShellError::type_error(
                 "string",
                 other.type_name().spanned(span),

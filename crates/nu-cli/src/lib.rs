@@ -45,7 +45,7 @@ pub use crate::cli::{
     create_default_context, parse_and_eval, process_script, register_plugins, run_script_file,
     run_script_standalone, LineResult,
 };
-pub use crate::commands::classified::block::run_block;
+pub use crate::commands::classified::block::{run_block, run_pipeline};
 pub use crate::commands::command::{
     whole_stream_command, CommandArgs, EvaluatedWholeStreamCommandArgs, Example, WholeStreamCommand,
 };
@@ -64,3 +64,5 @@ pub use num_traits::cast::ToPrimitive;
 
 // TODO: Temporary redirect
 pub use nu_protocol::{did_you_mean, TaggedDictBuilder};
+
+pub use nu_source::Tag;
